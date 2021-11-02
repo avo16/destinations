@@ -1,0 +1,10 @@
+<ul>
+  <% @destinations.each do |dest| %> 
+    <li>
+      <div><%= dest.city %></div>
+      <div><%= dest.country %></div>
+      <div><%= dest.currency %></div>
+      <div><%= dest.weather %></div>
+    </li>
+  <% end %>
+</ul>
