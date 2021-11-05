@@ -1,14 +1,12 @@
-  <h1>Sign In</h1>
-  <%= form_with url: sign_in_path do |f| %>
-    <p>
-    <%= f.label 'email:'%><br>
-    <%= f.text_field :email, id: 'email' %>
-    </p>
-    <p>
-    <%= f.label 'password:'%><br>
-    <%= f.password_field :password, id: 'password' %>
-    </p>
-    <p>
-    <%= f.submit 'Log In' %>
-    </p>
-  <% end %>
+<h1>Sign In</h1>
+<%= form_with class: 'row', url: sign_in_path do |f| %>
+  <div class="form-group mb-3">
+    <%= f.label 'email:' %><br>
+    <%= f.text_field :email, id: 'email', class: 'form-control', placeholder: "Email address" %>
+  </div>
+  <div class="form-group mb-3">
+    <%= f.label 'password:' %><br>
+    <%= f.password_field :password, id: 'password', class: 'form-control' %>
+  </div>
+  <%= f.submit 'Log In', class: 'btn btn-primary' %>
+<% end %>
