@@ -1,5 +1,3 @@
-require 'weather_destination'
-
 class DestinationsController < ApplicationController
 	def index
 		params = { city: 'London'}
