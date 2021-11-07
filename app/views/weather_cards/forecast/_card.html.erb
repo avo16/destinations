@@ -1,0 +1,17 @@
+<% weather[:forecast][:forecastday].each do |day| %>
+  <h3>Day: <%= day[:date] %></h3>
+  <div class="row">
+    <% day[:hour].each do |d| %>
+      <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 my-2">
+        <div class="card text-center">
+          <div class="card-body">
+            <img src="<%= d[:condition][:icon] %>" alt="icon">
+            <h5 class="card-title"><%= d[:condition][:text] %></h5>
+            <p class="card-subtitle"><%= d[:temp_c] %> °C</p>
+            <p class="card-subtitle"><%= d[:time] %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

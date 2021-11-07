@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/vlaid/weather_destination.git
-  revision: fae2564df98883431a72991f7e265c8b9391bb2f
+  revision: 408a69d2dc1e29ca7ae7460848c69177526d463c
   branch: main
   specs:
     weather_destination (0.1.0)

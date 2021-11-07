@@ -1,0 +1,13 @@
+<%= form_with url: get_data_url, method: :get, data: { remote: true } do |f| %>
+  <div class='form-group mb-3'>
+    <%= f.text_field :city, placeholder: 'City', class: 'form-control' %>
+    <small id='emailHelp' class='form-text text-muted'>Pass US Zipcode, UK Postcode, Canada Postalcode, IP address, Latitude/Longitude (decimal degree) or city name.</small>
+  </div>
+  <div class='input-group mb-3'>
+    <%= f.date_field :date, as: :date, min: Date.today.strftime("%Y-%m-%d"), class: 'form-control' %>
+  </div>
+  <%= f.hidden_field :weather_type, value: @weather_type %>
+  <%= f.submit 'Submit', class: 'btn btn-secondary' %>
+<% end %>
+
+<%= render 'weather_cards/grids' %>

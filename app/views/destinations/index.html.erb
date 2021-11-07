@@ -1,5 +1,5 @@
 <ul>
-  <% @destinations.each do |dest| %> 
+  <% @destinations.each do |dest| %>
     <li>
       <div><%= dest.city %></div>
       <div><%= dest.country %></div>
@@ -8,3 +8,4 @@
     </li>
   <% end %>
 </ul>
+<%= render 'weather_cards/form_type' %>

@@ -1,0 +1,5 @@
+<div class='input-group mb-3'>
+  <%= select_tag "weather_type", options_for_select(@options), prompt: "Please select", class: "form-select form-select-md mb-1",
+                 data: { remote: true, url: url_for(action: :get_form, id: 'weather_type'), update: "form" } %>
+</div>
+<div id='form'></div>
