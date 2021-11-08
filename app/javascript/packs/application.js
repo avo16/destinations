@@ -12,3 +12,10 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+window.setTimeout(function() {
+  $("#flash-message").fadeTo(1000, 0).fadeOut(1000, function(){
+    $(this).attr('style', '');
+    $(this).find('.container').html("");
+  });
+}, 5000);

@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+	add_flash_types :success, :warning, :error, :info
+
 	before_action :set_current_user
 	def set_current_user
 	  # finds user with session data and stores it if present
