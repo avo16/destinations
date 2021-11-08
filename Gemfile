@@ -29,6 +29,10 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'pry-byebug'
 
+# api weather destination
+gem 'weather_destination', git: 'https://github.com/vlaid/weather_destination.git', branch: 'main'
+# gem 'weather_destination', path: '../weather_destination'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

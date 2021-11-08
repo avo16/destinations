@@ -1,0 +1,16 @@
+<%= form_with url: get_data_url, method: :get, data: { remote: true } do |f| %>
+  <%= render 'weather_cards/default/components/city', f: f %>
+  <div class='form-group mb-3'>
+    <%= f.select :days, @days_option, {}, { class: 'form-select form-select-md' } %>
+    <small id='emailHelp' class='form-text text-muted'>Number of days of weather forecast. Value ranges from 1 to 10.</small>
+  </div>
+  <%= render 'weather_cards/default/components/api', f: f %>
+  <div class='form-group mb-3'>
+    <%= f.select :alerts, @yes_no_option, {}, { class: 'form-select form-select-md' } %>
+    <small id='emailHelp' class='form-text text-muted'>Get weather alert data.</small>
+  </div>
+  <%= f.hidden_field :weather_type, value: @weather_type %>
+  <%= f.submit 'Submit', class: 'btn btn-secondary' %>
+<% end %>
+
+<%= render 'weather_cards/grids' %>

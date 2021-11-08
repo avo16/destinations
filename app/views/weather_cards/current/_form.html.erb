@@ -1,0 +1,8 @@
+<%= form_with url: get_data_url, method: :get, data: { remote: true, id: 'data' } do |f| %>
+  <%= render 'weather_cards/default/components/city', f: f %>
+  <%= render 'weather_cards/default/components/api', f: f %>
+  <%= f.hidden_field :weather_type, value: @weather_type %>
+  <%= f.submit 'Submit', class: 'btn btn-secondary' %>
+<% end %>
+
+<%= render 'weather_cards/grids' %>
