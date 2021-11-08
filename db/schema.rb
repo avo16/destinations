@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_02_200526) do
+ActiveRecord::Schema.define(version: 2021_11_08_085123) do
 
   create_table "destinations", force: :cascade do |t|
     t.string "city"
@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(version: 2021_11_02_200526) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "vacations", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "destination_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["destination_id"], name: "index_vacations_on_destination_id"
+    t.index ["user_id"], name: "index_vacations_on_user_id"
   end
 
 end

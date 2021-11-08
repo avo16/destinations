@@ -1,0 +1,10 @@
+<ul>
+  <% @vacations.each do |v| %>
+    <li>
+      <div><%= v.destination.city %></div>
+      <div><%= v.destination.country %></div>
+      <div><%= v.destination.currency %></div>
+      <div><%= v.destination.weather %></div>
+    </li>
+  <% end %>
+</ul>
