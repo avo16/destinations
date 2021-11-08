@@ -31,7 +31,6 @@ class DestinationsController < ApplicationController
       @weather[:type] = params[:weather_type]
       @weather
       respond_to do |format|
-        binding.pry
         format.js
       end
     end
