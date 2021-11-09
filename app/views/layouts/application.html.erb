@@ -49,12 +49,7 @@
       </div>
     </nav>
     <div class="py-5 container">
-      <div id="flash-message">
-        <%= render 'shared/flash' %>
-      </div>
-      <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
-      <% end %>
+      <%= toastr_flash %>
       <%= yield %>
     </div>
   </body>

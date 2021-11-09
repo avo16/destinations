@@ -7,18 +7,12 @@ module ApplicationHelper
     end
   end
 
-  def bootstrap_class_for_flash(flash_type)
-    case flash_type
-    when 'success'
-      'alert-success'
-    when 'error'
-      'alert-danger'
-    when 'warning'
-      'alert-warning'
-    when 'notice'
-      'alert-info'
-    else
-      flash_type.to_s
-    end
+  def toastr_flash
+    flash.each_with_object([]) do |(type, message), flash_messages|
+      type = 'success' if type == 'notice'
+      type = 'error' if type == 'alert'
+      text = "toastr.#{type}('#{message}', '', { closeButton: true, progressBar: true })"
+      flash_messages << text.html_safe if message
+    end.join("\n").html_safe
   end
 end

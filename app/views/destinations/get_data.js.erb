@@ -1,5 +1,5 @@
 <% if flash.present? %>
-  $("#flash-message").html("<%= escape_javascript(render partial: "shared/flash") %>");
+  <%= toastr_flash %>
 <% else %>
   $("#items_grid").find('.row').html("<%= escape_javascript(render partial: "weather_cards/#{@weather[:type]}/card", locals: { weather: @weather } ) %>");
 <% end %>
