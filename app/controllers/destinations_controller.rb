@@ -28,6 +28,7 @@ class DestinationsController < ApplicationController
     if params[:weather_type].present?
       params_requested = get_data_params.to_h
       @weather = WeatherDestination.call(params[:weather_type], params_requested)
+      flash[:alert] = @weather[:error][:message] if @weather[:error].present?
       @weather[:type] = params[:weather_type]
       @weather
       respond_to do |format|

@@ -1,1 +1,5 @@
-$("#items_grid").find('.row').html("<%= escape_javascript(render partial: "weather_cards/#{@weather[:type]}/card", locals: { weather: @weather } ) %>");
+<% if flash.present? %>
+  <%= toastr_flash %>
+<% else %>
+  $("#items_grid").find('.row').html("<%= escape_javascript(render partial: "weather_cards/#{@weather[:type]}/card", locals: { weather: @weather } ) %>");
+<% end %>
